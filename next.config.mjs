@@ -1,14 +1,24 @@
+// next.config.mjs (update your existing config)
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
+  experimental: {
+    appDir: true,
   },
   images: {
-    unoptimized: true,
+    formats: ["image/webp", "image/avif"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
-}
+  // Add trailing slash for better SEO
+  trailingSlash: false,
+  // Enable static exports for better performance
+  output: "standalone",
+  // Compress images
+  compress: true,
+};
 
-export default nextConfig
+export default nextConfig;

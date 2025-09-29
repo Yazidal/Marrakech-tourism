@@ -1,100 +1,45 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Clock, Users, Star, MapPin, Calendar, Shield, ArrowLeft, Heart, Share2 } from "lucide-react"
-import Link from "next/link"
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { excursionData } from "@/data/excursion-details";
+import {
+  ArrowLeft,
+  Calendar,
+  Clock,
+  Heart,
+  MapPin,
+  Share2,
+  Shield,
+  Star,
+  Users,
+} from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
-// Mock data - in a real app, this would come from an API
-const excursionData = {
-  "1": {
-    id: 1,
-    title: "3-Day Sahara Desert Adventure",
-    description:
-      "Embark on an epic journey through the Sahara Desert, experiencing the magic of Morocco's most iconic landscape. This comprehensive adventure combines camel trekking, traditional Berber culture, and unforgettable nights under the star-filled desert sky.",
-    longDescription:
-      "This extraordinary 3-day desert adventure takes you deep into the heart of the Sahara, where golden dunes stretch endlessly toward the horizon. You'll experience authentic Berber hospitality, ride camels across ancient caravan routes, and sleep under some of the clearest night skies on Earth. Our expert local guides will share stories of desert life while ensuring your comfort and safety throughout this once-in-a-lifetime journey.",
-    images: [
-      "/camel-caravan-in-sahara-desert-at-sunset-with-berb.jpg",
-      "/placeholder.svg?key=desert2",
-      "/placeholder.svg?key=desert3",
-      "/placeholder.svg?key=desert4",
-    ],
-    duration: "3 Days / 2 Nights",
-    groupSize: "2-12 people",
-    rating: 4.9,
-    reviewCount: 127,
-    price: "€320",
-    category: "desert",
-    location: "Merzouga Desert",
-    highlights: [
-      "Camel trekking across golden dunes",
-      "Traditional Berber camp experience",
-      "Sunrise and sunset viewing",
-      "Desert camping under stars",
-      "Local cuisine and mint tea",
-      "Professional desert guides",
-    ],
-    included: [
-      "Transportation from/to Marrakech",
-      "Professional guide",
-      "Camel trekking",
-      "Desert camp accommodation",
-      "All meals (breakfast, lunch, dinner)",
-      "Traditional music entertainment",
-      "Bottled water",
-    ],
-    notIncluded: ["Personal expenses", "Tips for guides", "Travel insurance", "Alcoholic beverages"],
-    itinerary: [
-      {
-        day: 1,
-        title: "Marrakech to Dades Valley",
-        description:
-          "Depart Marrakech early morning, cross the High Atlas Mountains via Tizi n'Tichka pass, visit Ait Benhaddou kasbah, continue to Ouarzazate and overnight in Dades Valley.",
-        highlights: ["Atlas Mountains crossing", "Ait Benhaddou UNESCO site", "Dades Gorge"],
-      },
-      {
-        day: 2,
-        title: "Dades to Merzouga Desert",
-        description:
-          "Journey through Todra Gorge, arrive in Merzouga, begin camel trek into the Sahara, watch sunset over dunes, enjoy traditional dinner and Berber music at desert camp.",
-        highlights: ["Todra Gorge", "Camel trekking", "Desert sunset", "Berber camp"],
-      },
-      {
-        day: 3,
-        title: "Sunrise & Return to Marrakech",
-        description:
-          "Wake early for spectacular sunrise over dunes, camel trek back to Merzouga, journey back to Marrakech via different scenic route, arrive evening.",
-        highlights: ["Desert sunrise", "Return journey", "Scenic landscapes"],
-      },
-    ],
-    meetingPoint: "Hotel pickup in Marrakech",
-    cancellation: "Free cancellation up to 24 hours before start time",
-    difficulty: "Easy to Moderate",
-    bestTime: "October to April",
-  },
-}
+// data moved to data/excursion-details
 
 export default function ExcursionDetail({ id }: { id: string }) {
-  const [selectedImage, setSelectedImage] = useState(0)
-  const [isLiked, setIsLiked] = useState(false)
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
 
-  const excursion = excursionData[id as keyof typeof excursionData]
+  const excursion = excursionData[id as keyof typeof excursionData];
 
   if (!excursion) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-foreground mb-4">Excursion Not Found</h1>
+          <h1 className="text-2xl font-bold text-foreground mb-4">
+            Excursion Not Found
+          </h1>
           <Link href="/excursions">
             <Button>Back to Excursions</Button>
           </Link>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -102,7 +47,10 @@ export default function ExcursionDetail({ id }: { id: string }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <div className="flex items-center mb-6">
-          <Link href="/excursions" className="flex items-center text-primary hover:text-primary/80">
+          <Link
+            href="/excursions"
+            className="flex items-center text-primary hover:text-primary/80"
+          >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Excursions
           </Link>
@@ -120,7 +68,10 @@ export default function ExcursionDetail({ id }: { id: string }) {
                   className="w-full h-96 object-cover rounded-lg"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge variant="secondary" className="bg-black/50 text-white capitalize">
+                  <Badge
+                    variant="secondary"
+                    className="bg-black/50 text-white capitalize"
+                  >
                     {excursion.category}
                   </Badge>
                 </div>
@@ -134,7 +85,11 @@ export default function ExcursionDetail({ id }: { id: string }) {
                       selectedImage === index ? "ring-2 ring-primary" : ""
                     }`}
                   >
-                    <img src={image || "/placeholder.svg"} alt="" className="w-full h-20 object-cover" />
+                    <img
+                      src={image || "/placeholder.svg"}
+                      alt=""
+                      className="w-full h-20 object-cover"
+                    />
                   </button>
                 ))}
               </div>
@@ -144,7 +99,9 @@ export default function ExcursionDetail({ id }: { id: string }) {
             <div className="mb-8">
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">{excursion.title}</h1>
+                  <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+                    {excursion.title}
+                  </h1>
                   <div className="flex items-center gap-4 text-muted-foreground">
                     <div className="flex items-center">
                       <MapPin className="w-4 h-4 mr-1" />
@@ -167,7 +124,9 @@ export default function ExcursionDetail({ id }: { id: string }) {
                     onClick={() => setIsLiked(!isLiked)}
                     className={isLiked ? "text-red-500" : ""}
                   >
-                    <Heart className={`w-4 h-4 ${isLiked ? "fill-current" : ""}`} />
+                    <Heart
+                      className={`w-4 h-4 ${isLiked ? "fill-current" : ""}`}
+                    />
                   </Button>
                   <Button variant="outline" size="icon">
                     <Share2 className="w-4 h-4" />
@@ -179,7 +138,9 @@ export default function ExcursionDetail({ id }: { id: string }) {
                 <div className="flex items-center">
                   <Star className="w-5 h-5 text-primary mr-1" />
                   <span className="font-semibold">{excursion.rating}</span>
-                  <span className="text-muted-foreground ml-1">({excursion.reviewCount} reviews)</span>
+                  <span className="text-muted-foreground ml-1">
+                    ({excursion.reviewCount} reviews)
+                  </span>
                 </div>
                 <div className="flex gap-2">
                   <Badge variant="outline">Best Seller</Badge>
@@ -187,7 +148,9 @@ export default function ExcursionDetail({ id }: { id: string }) {
                 </div>
               </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">{excursion.description}</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {excursion.description}
+              </p>
             </div>
 
             {/* Tabs */}
@@ -202,8 +165,12 @@ export default function ExcursionDetail({ id }: { id: string }) {
               <TabsContent value="overview" className="mt-6">
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">About This Experience</h3>
-                    <p className="text-muted-foreground leading-relaxed">{excursion.longDescription}</p>
+                    <h3 className="text-xl font-semibold mb-3">
+                      About This Experience
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {excursion.longDescription}
+                    </p>
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-3">Highlights</h3>
@@ -229,11 +196,19 @@ export default function ExcursionDetail({ id }: { id: string }) {
                             {day.day}
                           </div>
                           <div className="flex-1">
-                            <h4 className="text-lg font-semibold mb-2">{day.title}</h4>
-                            <p className="text-muted-foreground mb-3">{day.description}</p>
+                            <h4 className="text-lg font-semibold mb-2">
+                              {day.title}
+                            </h4>
+                            <p className="text-muted-foreground mb-3">
+                              {day.description}
+                            </p>
                             <div className="flex flex-wrap gap-2">
                               {day.highlights.map((highlight, idx) => (
-                                <Badge key={idx} variant="outline" className="text-xs">
+                                <Badge
+                                  key={idx}
+                                  variant="outline"
+                                  className="text-xs"
+                                >
                                   {highlight}
                                 </Badge>
                               ))}
@@ -249,7 +224,9 @@ export default function ExcursionDetail({ id }: { id: string }) {
               <TabsContent value="included" className="mt-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-lg font-semibold mb-4 text-green-600">✓ What's Included</h3>
+                    <h3 className="text-lg font-semibold mb-4 text-green-600">
+                      ✓ What's Included
+                    </h3>
                     <ul className="space-y-2">
                       {excursion.included.map((item, index) => (
                         <li key={index} className="flex items-center">
@@ -260,7 +237,9 @@ export default function ExcursionDetail({ id }: { id: string }) {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-4 text-red-600">✗ What's Not Included</h3>
+                    <h3 className="text-lg font-semibold mb-4 text-red-600">
+                      ✗ What's Not Included
+                    </h3>
                     <ul className="space-y-2">
                       {excursion.notIncluded.map((item, index) => (
                         <li key={index} className="flex items-center">
@@ -280,21 +259,27 @@ export default function ExcursionDetail({ id }: { id: string }) {
                       <MapPin className="w-5 h-5 text-primary" />
                       <div>
                         <span className="font-semibold">Meeting Point:</span>
-                        <p className="text-muted-foreground">{excursion.meetingPoint}</p>
+                        <p className="text-muted-foreground">
+                          {excursion.meetingPoint}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <Shield className="w-5 h-5 text-primary" />
                       <div>
                         <span className="font-semibold">Difficulty:</span>
-                        <p className="text-muted-foreground">{excursion.difficulty}</p>
+                        <p className="text-muted-foreground">
+                          {excursion.difficulty}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <Calendar className="w-5 h-5 text-primary" />
                       <div>
                         <span className="font-semibold">Best Time:</span>
-                        <p className="text-muted-foreground">{excursion.bestTime}</p>
+                        <p className="text-muted-foreground">
+                          {excursion.bestTime}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -302,8 +287,12 @@ export default function ExcursionDetail({ id }: { id: string }) {
                     <div className="flex items-start gap-3">
                       <Shield className="w-5 h-5 text-primary mt-1" />
                       <div>
-                        <span className="font-semibold">Cancellation Policy:</span>
-                        <p className="text-muted-foreground">{excursion.cancellation}</p>
+                        <span className="font-semibold">
+                          Cancellation Policy:
+                        </span>
+                        <p className="text-muted-foreground">
+                          {excursion.cancellation}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -317,13 +306,17 @@ export default function ExcursionDetail({ id }: { id: string }) {
             <Card className="sticky top-24">
               <CardContent className="p-6">
                 <div className="text-center mb-6">
-                  <div className="text-3xl font-bold text-primary mb-2">{excursion.price}</div>
+                  <div className="text-3xl font-bold text-primary mb-2">
+                    {excursion.price}
+                  </div>
                   <div className="text-muted-foreground">per person</div>
                 </div>
 
                 <div className="space-y-4 mb-6">
                   <div>
-                    <label className="block text-sm font-medium mb-2">Select Date</label>
+                    <label className="block text-sm font-medium mb-2">
+                      Select Date
+                    </label>
                     <input
                       type="date"
                       className="w-full p-3 border border-border rounded-md bg-background"
@@ -331,7 +324,9 @@ export default function ExcursionDetail({ id }: { id: string }) {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Number of Travelers</label>
+                    <label className="block text-sm font-medium mb-2">
+                      Number of Travelers
+                    </label>
                     <select className="w-full p-3 border border-border rounded-md bg-background">
                       <option>1 person</option>
                       <option>2 people</option>
@@ -370,5 +365,5 @@ export default function ExcursionDetail({ id }: { id: string }) {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,0 +1,118 @@
+export const excursions = [
+  {
+    id: 1,
+    title: "3-Day Sahara Desert Adventure",
+    description:
+      "Epic journey through the Sahara with camel trekking, overnight camping, and sunrise over the dunes.",
+    image: "/camel-caravan-in-sahara-desert-at-sunset-with-berb.jpg",
+    duration: "3 Days",
+    groupSize: "2-12 people",
+    rating: 4.9,
+    price: "€320",
+    category: "desert",
+    location: "Merzouga Desert",
+    highlights: [
+      "Camel trekking",
+      "Desert camping",
+      "Berber culture",
+      "Sunrise viewing",
+    ],
+  },
+  {
+    id: 2,
+    title: "Atlas Mountains Trek",
+    description:
+      "Multi-day hiking adventure through traditional Berber villages and stunning mountain landscapes.",
+    image: "/quad-biking-in-atlas-mountains-morocco-with-mounta.jpg",
+    duration: "2 Days",
+    groupSize: "4-10 people",
+    rating: 4.8,
+    price: "€180",
+    category: "adventure",
+    location: "High Atlas",
+    highlights: [
+      "Mountain hiking",
+      "Village visits",
+      "Local cuisine",
+      "Scenic views",
+    ],
+  },
+  {
+    id: 3,
+    title: "Imperial Cities Tour",
+    description:
+      "Comprehensive cultural journey through Morocco's four imperial cities with expert guides.",
+    image: "/marrakech-medina-souks-with-traditional-architectu.jpg",
+    duration: "5 Days",
+    groupSize: "6-16 people",
+    rating: 4.7,
+    price: "€450",
+    category: "cultural",
+    location: "Multiple Cities",
+    highlights: [
+      "Historical sites",
+      "Architecture",
+      "Local markets",
+      "Traditional crafts",
+    ],
+  },
+  {
+    id: 4,
+    title: "Coastal Essaouira Escape",
+    description:
+      "Relaxing coastal getaway with beach activities, seafood, and Portuguese-influenced architecture.",
+    image: "/placeholder.svg?key=coastal1",
+    duration: "2 Days",
+    groupSize: "2-8 people",
+    rating: 4.6,
+    price: "€160",
+    category: "coastal",
+    location: "Essaouira",
+    highlights: [
+      "Beach relaxation",
+      "Fresh seafood",
+      "Windsurfing",
+      "Art galleries",
+    ],
+  },
+  {
+    id: 5,
+    title: "Ouzoud Waterfalls Adventure",
+    description:
+      "Day trip to Morocco's most spectacular waterfalls with hiking and swimming opportunities.",
+    image: "/placeholder.svg?key=waterfall1",
+    duration: "1 Day",
+    groupSize: "4-15 people",
+    rating: 4.8,
+    price: "€85",
+    category: "nature",
+    location: "Ouzoud",
+    highlights: [
+      "Waterfall hiking",
+      "Swimming",
+      "Barbary macaques",
+      "Local lunch",
+    ],
+  },
+  {
+    id: 6,
+    title: "Fes Cultural Immersion",
+    description:
+      "Deep dive into Morocco's spiritual capital with medina tours, traditional workshops, and local cuisine.",
+    image: "/placeholder.svg?key=fes1",
+    duration: "2 Days",
+    groupSize: "4-12 people",
+    rating: 4.9,
+    price: "€220",
+    category: "cultural",
+    location: "Fes",
+    highlights: [
+      "Ancient medina",
+      "Artisan workshops",
+      "Traditional cuisine",
+      "Religious sites",
+    ],
+  },
+];
+
+export type Excursion = (typeof excursions)[number];
