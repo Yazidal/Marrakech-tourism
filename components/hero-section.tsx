@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { getDict } from "@/lib/i18n";
-import { ArrowRight, MapPin, Star } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 import Link from "next/link";
 
 // Floating Camel Component
@@ -491,13 +491,22 @@ export default function HeroSection({ locale = "en" }: HeroSectionProps) {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <Link href={`/${locale}/booking`} className="w-full sm:w-auto">
+          {/* <Link href={`/${locale}/booking`} className="w-full sm:w-auto">
             <Button
               size="lg"
               className="w-full sm:w-auto bg-primary hover:bg-primary/90 dark:bg-primary dark:hover:bg-primary/80 text-primary-foreground text-lg px-8 py-4 animate-pulse-glow transition-all duration-300 hover:scale-105"
             >
               {t.bookAdventure}
               <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link> */}
+          <Link href={`/${locale}/excursions`} className="w-full sm:w-auto">
+            <Button
+              size="lg"
+              variant="outline"
+              className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-black dark:border-gray-200 dark:text-gray-200 dark:hover:bg-gray-200 dark:hover:text-gray-900 text-lg px-8 py-4 bg-transparent transition-all duration-300 hover:scale-105"
+            >
+              {t.exploreExcursions}
             </Button>
           </Link>
           <Link href={`/${locale}/activities`} className="w-full sm:w-auto">
