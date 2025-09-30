@@ -9,33 +9,39 @@ import Link from "next/link";
 import { useState } from "react";
 
 const categories = [
-  { id: "all", name: "All Excursions", count: excursions.length },
+  { id: "all", name: "Toutes les excursions", count: excursions.length },
   {
     id: "desert",
-    name: "Desert",
+    name: "Désert",
     count: excursions.filter((e) => e.category === "desert").length,
   },
   {
-    id: "adventure",
-    name: "Adventure",
-    count: excursions.filter((e) => e.category === "adventure").length,
-  },
-  {
-    id: "cultural",
-    name: "Cultural",
-    count: excursions.filter((e) => e.category === "cultural").length,
-  },
-  {
-    id: "coastal",
-    name: "Coastal",
-    count: excursions.filter((e) => e.category === "coastal").length,
+    id: "mountain",
+    name: "Montagne",
+    count: excursions.filter((e) => e.category === "mountain").length,
   },
   {
     id: "nature",
     name: "Nature",
     count: excursions.filter((e) => e.category === "nature").length,
   },
+  {
+    id: "cultural",
+    name: "Culturel",
+    count: excursions.filter((e) => e.category === "cultural").length,
+  },
+  {
+    id: "coastal",
+    name: "Côtier",
+    count: excursions.filter((e) => e.category === "coastal").length,
+  },
 ];
+
+// Fonction pour extraire le prix numérique
+const extractPrice = (priceString: string): number => {
+  const match = priceString.match(/(\d+)/);
+  return match ? parseInt(match[1]) : 0;
+};
 
 export default function ExcursionsCatalog() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -49,19 +55,17 @@ export default function ExcursionsCatalog() {
   const sortedExcursions = [...filteredExcursions].sort((a, b) => {
     switch (sortBy) {
       case "price-low":
-        return (
-          Number.parseInt(a.price.replace("€", "")) -
-          Number.parseInt(b.price.replace("€", ""))
-        );
+        return extractPrice(a.price) - extractPrice(b.price);
       case "price-high":
-        return (
-          Number.parseInt(b.price.replace("€", "")) -
-          Number.parseInt(a.price.replace("€", ""))
-        );
+        return extractPrice(b.price) - extractPrice(a.price);
       case "rating":
         return b.rating - a.rating;
-      case "duration":
-        return Number.parseInt(a.duration) - Number.parseInt(b.duration);
+      case "duration": {
+        // Extraire les nombres des durées pour comparaison
+        const aDuration = parseInt(a.duration.match(/(\d+)/)?.[1] || "0");
+        const bDuration = parseInt(b.duration.match(/(\d+)/)?.[1] || "0");
+        return aDuration - bDuration;
+      }
       default:
         return b.rating - a.rating;
     }
@@ -73,12 +77,12 @@ export default function ExcursionsCatalog() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-            Marrakech <span className="text-primary">Excursions</span>
+            Excursions à <span className="text-primary">Marrakech</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Embark on unforgettable multi-day adventures that showcase the
-            diverse landscapes, rich culture, and authentic experiences Morocco
-            has to offer.
+            Embarquez pour des aventures inoubliables qui mettent en valeur les
+            paysages diversifiés, la riche culture et les expériences
+            authentiques que le Maroc a à offrir.
           </p>
         </div>
 
@@ -88,7 +92,7 @@ export default function ExcursionsCatalog() {
           <div className="flex-1">
             <div className="flex items-center mb-4">
               <Filter className="w-5 h-5 text-primary mr-2" />
-              <span className="font-semibold text-foreground">Categories</span>
+              <span className="font-semibold text-foreground">Catégories</span>
             </div>
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
@@ -109,18 +113,18 @@ export default function ExcursionsCatalog() {
           {/* Sort Options */}
           <div className="lg:w-64">
             <div className="flex items-center mb-4">
-              <span className="font-semibold text-foreground">Sort by</span>
+              <span className="font-semibold text-foreground">Trier par</span>
             </div>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
               className="w-full p-2 border border-border rounded-md bg-background text-foreground"
             >
-              <option value="popular">Most Popular</option>
-              <option value="rating">Highest Rated</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="duration">Duration</option>
+              <option value="popular">Les plus populaires</option>
+              <option value="rating">Meilleures notes</option>
+              <option value="price-low">Prix : Croissant</option>
+              <option value="price-high">Prix : Décroissant</option>
+              <option value="duration">Durée</option>
             </select>
           </div>
         </div>
@@ -128,18 +132,20 @@ export default function ExcursionsCatalog() {
         {/* Results Count */}
         <div className="mb-8">
           <p className="text-muted-foreground">
-            Showing {sortedExcursions.length} excursion
+            Affichage de {sortedExcursions.length} excursion
             {sortedExcursions.length !== 1 ? "s" : ""}
             {selectedCategory !== "all" &&
-              ` in ${categories.find((c) => c.id === selectedCategory)?.name}`}
+              ` dans ${
+                categories.find((c) => c.id === selectedCategory)?.name
+              }`}
           </p>
         </div>
 
         {/* Excursions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sortedExcursions.map((excursion) => (
+          {sortedExcursions.map((excursion, index) => (
             <Card
-              key={excursion.id}
+              key={`excursion-${excursion.id}-${index}`}
               className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-border overflow-hidden"
             >
               <div className="relative overflow-hidden">
@@ -168,7 +174,7 @@ export default function ExcursionsCatalog() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
-                    <Star className="w-4 h-4 text-primary mr-1" />
+                    <Star className="w-4 h-4 text-primary fill-primary mr-1" />
                     <span className="text-sm font-medium">
                       {excursion.rating}
                     </span>
@@ -179,11 +185,11 @@ export default function ExcursionsCatalog() {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
                   {excursion.title}
                 </h3>
 
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed line-clamp-3">
                   {excursion.description}
                 </p>
 
@@ -195,26 +201,28 @@ export default function ExcursionsCatalog() {
                 </div>
 
                 {/* Highlights */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-1">
-                    {excursion.highlights
-                      .slice(0, 3)
-                      .map((highlight, index) => (
-                        <Badge
-                          key={index}
-                          variant="outline"
-                          className="text-xs"
-                        >
-                          {highlight}
+                {excursion.highlights && excursion.highlights.length > 0 && (
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-1">
+                      {excursion.highlights
+                        .slice(0, 3)
+                        .map((highlight, index) => (
+                          <Badge
+                            key={index}
+                            variant="outline"
+                            className="text-xs"
+                          >
+                            {highlight}
+                          </Badge>
+                        ))}
+                      {excursion.highlights.length > 3 && (
+                        <Badge variant="outline" className="text-xs">
+                          +{excursion.highlights.length - 3} plus
                         </Badge>
-                      ))}
-                    {excursion.highlights.length > 3 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{excursion.highlights.length - 3} more
-                      </Badge>
-                    )}
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 <div className="flex gap-2">
                   <Link href={`/excursions/${excursion.id}`} className="flex-1">
@@ -222,7 +230,7 @@ export default function ExcursionsCatalog() {
                       variant="outline"
                       className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
                     >
-                      View Details
+                      Voir détails
                     </Button>
                   </Link>
                   <Link
@@ -233,8 +241,8 @@ export default function ExcursionsCatalog() {
                     )}&price=${encodeURIComponent(excursion.price)}`}
                     className="flex-1"
                   >
-                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                      Book Now
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                      Réserver
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </Link>
@@ -248,13 +256,13 @@ export default function ExcursionsCatalog() {
         {sortedExcursions.length === 0 && (
           <div className="text-center py-12">
             <p className="text-xl text-muted-foreground mb-4">
-              No excursions found for the selected category.
+              Aucune excursion trouvée pour la catégorie sélectionnée.
             </p>
             <Button
               onClick={() => setSelectedCategory("all")}
               variant="outline"
             >
-              View All Excursions
+              Voir toutes les excursions
             </Button>
           </div>
         )}

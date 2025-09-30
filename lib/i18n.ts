@@ -69,7 +69,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     duration: "Duration",
     showing: "Showing",
     activity: "activity",
-    activities: "activities",
+    // activities: "activities",
     in: "in",
     noActivitiesFound: "No activities found for the selected category.",
     viewAllActivities: "View All Activities",
@@ -80,7 +80,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     excursionsDescription:
       "Embark on unforgettable multi-day adventures that showcase the diverse landscapes, rich culture, and authentic experiences Morocco has to offer.",
     excursion: "excursion",
-    excursions: "excursions",
+    // excursions: "excursions",
     noExcursionsFound: "No excursions found for the selected category.",
     viewAllExcursions: "View All Excursions",
   },
@@ -152,7 +152,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     duration: "Durée",
     showing: "Affichage de",
     activity: "activité",
-    activities: "activités",
+    // activities: "activités",
     in: "dans",
     noActivitiesFound:
       "Aucune activité trouvée pour la catégorie sélectionnée.",
@@ -164,7 +164,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     excursionsDescription:
       "Partez pour des aventures inoubliables de plusieurs jours qui mettent en valeur les paysages diversifiés, la culture riche et les expériences authentiques que le Maroc a à offrir.",
     excursion: "excursion",
-    excursions: "excursions",
+    // excursions: "excursions",
     noExcursionsFound:
       "Aucune excursion trouvée pour la catégorie sélectionnée.",
     viewAllExcursions: "Voir Toutes les Excursions",
@@ -236,7 +236,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     duration: "Duración",
     showing: "Mostrando",
     activity: "actividad",
-    activities: "actividades",
+    // activities: "actividades",
     in: "en",
     noActivitiesFound:
       "No se encontraron actividades para la categoría seleccionada.",
@@ -248,7 +248,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     excursionsDescription:
       "Embárcate en aventuras inolvidables de varios días que muestran los diversos paisajes, la rica cultura y las experiencias auténticas que Marruecos tiene para ofrecer.",
     excursion: "excursión",
-    excursions: "excursiones",
+    // excursions: "excursiones",
     noExcursionsFound:
       "No se encontraron excursiones para la categoría seleccionada.",
     viewAllExcursions: "Ver Todas las Excursiones",

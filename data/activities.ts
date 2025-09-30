@@ -152,36 +152,36 @@ export const activities = [
   //   ],
   // },
 
-  {
-    id: 1,
-    title: "Atelier de broderie",
-    description:
-      "Une envie de tester votre créativité, venez découvrir et apprendre les premières bases autour d’un thé marocain, l’activité est destinée à tout le monde, aucune expérience est nécessaire.",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/IMG_7648.jpg",
-    duration: "2 Heures",
-    groupSize: "1-10 personnes",
-    rating: 4.6,
-    price: "30€",
-    category: "workshop",
-    location: "Marrakech",
-    highlights: ["Pause thé traditionnelle"],
-  },
-  {
-    id: 2,
-    title: "Atelier peinture céramique",
-    description:
-      "L’atelier Lamsaty c’est l’idée de 4 sœurs, Karima, Amal, Wafa et Asma qui ont décidé de partager leurs passions autour d’elles.",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2024/06/IMG_7650.jpg",
-    duration: "2 Heures",
-    groupSize: "1-10 personnes",
-    rating: 4.9,
-    price: "30€",
-    category: "workshop",
-    location: "Marrakech",
-    highlights: ["Pause thé traditionnelle"],
-  },
+  // {
+  //   id: 1,
+  //   title: "Atelier de broderie",
+  //   description:
+  //     "Une envie de tester votre créativité, venez découvrir et apprendre les premières bases autour d’un thé marocain, l’activité est destinée à tout le monde, aucune expérience est nécessaire.",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/IMG_7648.jpg",
+  //   duration: "2 Heures",
+  //   groupSize: "1-10 personnes",
+  //   rating: 4.6,
+  //   price: "30€",
+  //   category: "workshop",
+  //   location: "Marrakech",
+  //   highlights: ["Pause thé traditionnelle"],
+  // },
+  // {
+  //   id: 2,
+  //   title: "Atelier peinture céramique",
+  //   description:
+  //     "L’atelier Lamsaty c’est l’idée de 4 sœurs, Karima, Amal, Wafa et Asma qui ont décidé de partager leurs passions autour d’elles.",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2024/06/IMG_7650.jpg",
+  //   duration: "2 Heures",
+  //   groupSize: "1-10 personnes",
+  //   rating: 4.9,
+  //   price: "30€",
+  //   category: "workshop",
+  //   location: "Marrakech",
+  //   highlights: ["Pause thé traditionnelle"],
+  // },
   {
     id: 3,
     title: "Balade à cheval",
@@ -241,21 +241,21 @@ export const activities = [
     location: "La Palmeraie",
     highlights: ["Pause thé traditionnelle"],
   },
-  {
-    id: 7,
-    title: "Bled Ouladi",
-    description:
-      "Une ferme où l’on passe un moment mémorable, où l’on mange bien et où les parents et les enfants sont les bienvenus : Bled Ouladi, « le pays de mes enfants » en arabe, porte bien son nom.",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/Bled-Ouladi-ferme-pedagogique-Marrakech-Best-Of.jpg",
-    duration: "11 Heures",
-    groupSize: "1-10 personnes",
-    rating: 4.7,
-    price: "35€",
-    category: "workshop",
-    location: "Marrakech",
-    highlights: ["Repas inclus"],
-  },
+  // {
+  //   id: 7,
+  //   title: "Bled Ouladi",
+  //   description:
+  //     "Une ferme où l’on passe un moment mémorable, où l’on mange bien et où les parents et les enfants sont les bienvenus : Bled Ouladi, « le pays de mes enfants » en arabe, porte bien son nom.",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/Bled-Ouladi-ferme-pedagogique-Marrakech-Best-Of.jpg",
+  //   duration: "11 Heures",
+  //   groupSize: "1-10 personnes",
+  //   rating: 4.7,
+  //   price: "35€",
+  //   category: "workshop",
+  //   location: "Marrakech",
+  //   highlights: ["Repas inclus"],
+  // },
   {
     id: 8,
     title: "Buggy Agafay",
@@ -385,100 +385,100 @@ export const activities = [
     location: "Désert d'Agafay",
     highlights: ["Pause thé traditionnelle", "Repas inclus"],
   },
-  {
-    id: 16,
-    title: "Excursion en trottinette électrique",
-    description:
-      "Offrez-vous une expérience unique à Marrakech avec nos excursions en trottinette électrique tout terrain. Que vous souhaitiez explorer l’agitation de la Médina ou vous perdre dans la sérénité de la Palmeraie, ces parcours vous offriront une immersion totale dans la ville et ses paysages incroyables. Adaptées à tous les niveaux, ces excursions sont parfaites pour découvrir Marrakech sous un angle original, tout en profitant du confort d’une trottinette adaptée à tous les types de terrain.",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2025/02/Design-sans-titre-1-1.png",
-    duration: "2 Heures",
-    groupSize: "2+ personnes",
-    rating: 5.0,
-    price: "45€",
-    category: "family",
-    location: "La Palmeraie",
-    highlights: [
-      "Guide professionnel",
-      "Équipement fourni",
-      "Pause thé traditionnelle",
-    ],
-  },
-  {
-    id: 17,
-    title: "La Fattoria Ecolodge",
-    description:
-      "La Fattoria Ecolodge est une destination idéale pour les familles en quête d’une expérience unique.",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/IMG_8615.jpg",
-    duration: "11 Heures",
-    groupSize: "1-10 personnes",
-    rating: 5.0,
-    price: "30€",
-    category: "culinary",
-    location: "Lac Lalla Takerkoust",
-    highlights: ["Repas inclus"],
-  },
-  {
-    id: 18,
-    title: "La Perle Aux Oiseaux",
-    description:
-      "La perle aux oiseaux est une réserve qui a pour but de protéger les espèces d’oiseaux indigènes et autres animaux des quatre coins du monde, en les soignants.",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/Capture-decran-2024-06-03-a-14.23.jpg",
-    duration: "10 Heures",
-    groupSize: "1-10 personnes",
-    rating: 4.9,
-    price: "12€",
-    category: "workshop",
-    location: "Marrakech",
-    highlights: ["Repas inclus"],
-  },
-  {
-    id: 19,
-    title: "Meydene Expérience Marrakech",
-    description:
-      "Le Meydene Marrakech est un lieu magique qui vous transportera dans un univers différent dès que vous y mettrez les pieds ! C’est une expérience exceptionnelle qui convient aux petits et aux grands !",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2024/06/Ile-aux-histoire-1-scaled-1.jpg",
-    duration: "9 Heures",
-    groupSize: "1-10 personnes",
-    rating: 4.7,
-    price: "13€",
-    category: "family",
-    location: "Marrakech",
-    highlights: ["Pause thé traditionnelle"],
-  },
-  {
-    id: 20,
-    title: "Musée d’Art Culinaire",
-    description:
-      "Situé au cœur de la médina, le musée de l’art culinaire marocain est un lieu exceptionnel où l’histoire et la tradition gastronomiques se rencontrent. À travers des expositions, des ateliers et des cours de cuisine, vous découvrirez les secrets de la cuisine marocaine, tout en vivant une expérience immersive et enrichissante.",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2024/06/TTBWZCFDINFUXBLFF2TIHKQOC4.jpg",
-    duration: "9 Heures",
-    groupSize: "1-10 personnes",
-    rating: 4.8,
-    price: "4€",
-    category: "culinary",
-    location: "Médina de Marrakech",
-    highlights: ["Séance photos", "Certificat fourni"],
-  },
-  {
-    id: 21,
-    title: "Oasiria",
-    description:
-      "The Beautiful Marrakech vous propose de découvrir en exclusivité le premier parc aquatique du Maroc, Oasiria !",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/IMG_8649.jpg",
-    duration: "10 Heures",
-    groupSize: "1-10 personnes",
-    rating: 4.7,
-    price: "29€",
-    category: "family",
-    location: "Marrakech",
-    highlights: ["Expérience unique", "Encadrement professionnel"],
-  },
+  // {
+  //   id: 16,
+  //   title: "Excursion en trottinette électrique",
+  //   description:
+  //     "Offrez-vous une expérience unique à Marrakech avec nos excursions en trottinette électrique tout terrain. Que vous souhaitiez explorer l’agitation de la Médina ou vous perdre dans la sérénité de la Palmeraie, ces parcours vous offriront une immersion totale dans la ville et ses paysages incroyables. Adaptées à tous les niveaux, ces excursions sont parfaites pour découvrir Marrakech sous un angle original, tout en profitant du confort d’une trottinette adaptée à tous les types de terrain.",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2025/02/Design-sans-titre-1-1.png",
+  //   duration: "2 Heures",
+  //   groupSize: "2+ personnes",
+  //   rating: 5.0,
+  //   price: "45€",
+  //   category: "family",
+  //   location: "La Palmeraie",
+  //   highlights: [
+  //     "Guide professionnel",
+  //     "Équipement fourni",
+  //     "Pause thé traditionnelle",
+  //   ],
+  // },
+  // {
+  //   id: 17,
+  //   title: "La Fattoria Ecolodge",
+  //   description:
+  //     "La Fattoria Ecolodge est une destination idéale pour les familles en quête d’une expérience unique.",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/IMG_8615.jpg",
+  //   duration: "11 Heures",
+  //   groupSize: "1-10 personnes",
+  //   rating: 5.0,
+  //   price: "30€",
+  //   category: "culinary",
+  //   location: "Lac Lalla Takerkoust",
+  //   highlights: ["Repas inclus"],
+  // },
+  // {
+  //   id: 18,
+  //   title: "La Perle Aux Oiseaux",
+  //   description:
+  //     "La perle aux oiseaux est une réserve qui a pour but de protéger les espèces d’oiseaux indigènes et autres animaux des quatre coins du monde, en les soignants.",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/Capture-decran-2024-06-03-a-14.23.jpg",
+  //   duration: "10 Heures",
+  //   groupSize: "1-10 personnes",
+  //   rating: 4.9,
+  //   price: "12€",
+  //   category: "workshop",
+  //   location: "Marrakech",
+  //   highlights: ["Repas inclus"],
+  // },
+  // {
+  //   id: 19,
+  //   title: "Meydene Expérience Marrakech",
+  //   description:
+  //     "Le Meydene Marrakech est un lieu magique qui vous transportera dans un univers différent dès que vous y mettrez les pieds ! C’est une expérience exceptionnelle qui convient aux petits et aux grands !",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2024/06/Ile-aux-histoire-1-scaled-1.jpg",
+  //   duration: "9 Heures",
+  //   groupSize: "1-10 personnes",
+  //   rating: 4.7,
+  //   price: "13€",
+  //   category: "family",
+  //   location: "Marrakech",
+  //   highlights: ["Pause thé traditionnelle"],
+  // },
+  // {
+  //   id: 20,
+  //   title: "Musée d’Art Culinaire",
+  //   description:
+  //     "Situé au cœur de la médina, le musée de l’art culinaire marocain est un lieu exceptionnel où l’histoire et la tradition gastronomiques se rencontrent. À travers des expositions, des ateliers et des cours de cuisine, vous découvrirez les secrets de la cuisine marocaine, tout en vivant une expérience immersive et enrichissante.",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2024/06/TTBWZCFDINFUXBLFF2TIHKQOC4.jpg",
+  //   duration: "9 Heures",
+  //   groupSize: "1-10 personnes",
+  //   rating: 4.8,
+  //   price: "4€",
+  //   category: "culinary",
+  //   location: "Médina de Marrakech",
+  //   highlights: ["Séance photos", "Certificat fourni"],
+  // },
+  // {
+  //   id: 21,
+  //   title: "Oasiria",
+  //   description:
+  //     "The Beautiful Marrakech vous propose de découvrir en exclusivité le premier parc aquatique du Maroc, Oasiria !",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/IMG_8649.jpg",
+  //   duration: "10 Heures",
+  //   groupSize: "1-10 personnes",
+  //   rating: 4.7,
+  //   price: "29€",
+  //   category: "family",
+  //   location: "Marrakech",
+  //   highlights: ["Expérience unique", "Encadrement professionnel"],
+  // },
   {
     id: 22,
     title: "Parapente",
@@ -494,21 +494,21 @@ export const activities = [
     location: "Marrakech",
     highlights: ["Pause thé traditionnelle"],
   },
-  {
-    id: 23,
-    title: "Petit nuage",
-    description:
-      "Découvrez notre dernière offre exclusive : le Baby Spa à Marrakech !",
-    image:
-      "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/4-10.jpg",
-    duration: "1 Heure",
-    groupSize: "1-10 personnes",
-    rating: 4.6,
-    price: "25€",
-    category: "workshop",
-    location: "Marrakech",
-    highlights: ["Expérience unique", "Encadrement professionnel"],
-  },
+  // {
+  //   id: 23,
+  //   title: "Petit nuage",
+  //   description:
+  //     "Découvrez notre dernière offre exclusive : le Baby Spa à Marrakech !",
+  //   image:
+  //     "https://thebeautifulmarrakech.com/wp-content/uploads/2024/04/4-10.jpg",
+  //   duration: "1 Heure",
+  //   groupSize: "1-10 personnes",
+  //   rating: 4.6,
+  //   price: "25€",
+  //   category: "workshop",
+  //   location: "Marrakech",
+  //   highlights: ["Expérience unique", "Encadrement professionnel"],
+  // },
   {
     id: 24,
     title: "Quad à Agafay",

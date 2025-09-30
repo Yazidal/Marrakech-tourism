@@ -20,19 +20,24 @@ const categories = [
     count: activities.filter((a) => a.category === "adventure").length,
   },
   {
-    id: "cultural",
-    name: "Cultural",
-    count: activities.filter((a) => a.category === "cultural").length,
+    id: "animals",
+    name: "Animals",
+    count: activities.filter((a) => a.category === "animals").length,
   },
   {
-    id: "desert",
-    name: "Desert",
-    count: activities.filter((a) => a.category === "desert").length,
+    id: "workshop",
+    name: "Workshop",
+    count: activities.filter((a) => a.category === "workshop").length,
   },
   {
-    id: "wellness",
-    name: "Wellness",
-    count: activities.filter((a) => a.category === "wellness").length,
+    id: "culinary",
+    name: "Culinary",
+    count: activities.filter((a) => a.category === "culinary").length,
+  },
+  {
+    id: "aerial",
+    name: "Aerial",
+    count: activities.filter((a) => a.category === "aerial").length,
   },
 ];
 
